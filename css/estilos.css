@@ -1,0 +1,838 @@
+/* Estilos generales */
+
+body {
+font-family: "Roboto Flex", sans-serif;
+font-size:1.2em;
+background-color:#1a1a1a;
+color: #333;
+margin: 0;
+padding: 20px;
+}
+
+main {
+max-width: 1200px;
+margin: 0 auto;
+background-color: #000000;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+display: flex; /* Usar Flexbox para el menú de navegación */
+justify-content: space-between; /* Espacio entre el logo y el menú */
+align-items: center; /* Centrar verticalmente los elementos */
+padding: 10px; /* Espaciado alrededor del nav */
+background-color: #333; /* Fondo oscuro para la barra de navegación */
+border-radius: 10px 10px 10px 10px;
+}
+
+.logo {
+display: flex; /* Usar Flexbox para alinear logo y título */
+align-items: center; /* Centra verticalmente el logo y el título */
+position: relative; /* Necesario para el pseudo-elemento */
+border-radius: 10%; /* Bordes redondeados del contenedor del logo */
+}
+
+.logo::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(76, 175, 80, 0.7), rgba(29, 132, 72, 0.7)); /* Fondo verde degradado */
+z-index: -1; /* Coloca el degradado detrás del logo */
+transition: opacity 0.5s; /* Suaviza la transición del reflejo */
+opacity: 0; /* Inicialmente invisible */
+}
+
+.logo:hover::before {
+opacity: 0.6; /* Cambia la opacidad en hover para un efecto de brillo */
+}
+
+.logo img {
+width: 50%; /* 50% del tamaño del contenedor */
+max-width: 80px; /* Tamaño máximo para pantallas grandes */
+height: auto; /* Mantiene la relación de aspecto */
+position: relative; /* Asegura que el logo esté por encima del fondo */
+z-index: 1; /* Asegura que el logo esté por encima del fondo */
+}
+
+.title {
+color: white; /* Color del texto */
+margin-left: 10px; /* Espacio entre el logo y el título */
+font-size: 1.5rem; /* Tamaño de fuente ajustable */
+}
+.cursor {
+display: inline-block; /* Permite aplicar la animación */
+animation: blink 1s step-end infinite; /* Animación de parpadeo */
+color: white; /* Color del punto */
+}
+
+/* Definición de la animación de parpadeo */
+@keyframes blink {
+0%, 100% {
+opacity: 1; /* Totalmente visible al inicio y al final */
+}
+50% {
+opacity: 0; /* Invisible en el medio de la animación */
+}
+}
+
+/* Estilos para el contenedor de la barra de navegación */
+nav {
+display: flex;
+align-items: center;
+justify-content: space-between; /* Espacio entre el logo y el menú/hamburguesa */
+padding: 5px 5px;
+background-color: #333; /* Color de fondo de la barra */
+}
+
+.logo {
+display: flex;
+align-items: center;
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 20px;
+}
+
+.nav-links a {
+color: white;
+text-decoration: none;
+}
+
+/* Icono de hamburguesa a la derecha */
+.hamburger {
+font-size: 30px;
+color: white;
+cursor: pointer;
+display: none; /* Por defecto, oculto en pantallas grandes */
+}
+
+.nav-links li {
+margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+.nav-links a {
+color: white; /* Color de los enlaces */
+text-decoration: none; /* Sin subrayado */
+}
+.nav-links li {
+display: inline;
+}
+
+.nav-links a {
+text-decoration: none;
+color: white;
+font-size: 18px;
+text-transform: uppercase;
+position: relative;
+padding-bottom: 5px;
+transition: color 0.3s ease;
+}
+
+/* Línea de neón */
+.nav-links a::before {
+content: "";
+position: absolute;
+width: 0;
+height: 3px;
+bottom: 0;
+left: 0;
+background-color: #00ff00; /* Color neón verde */
+visibility: hidden;
+transition: all 0.4s ease-in-out;
+box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* Cuando pasa el mouse */
+.nav-links a:hover {
+color: #00ff00; /* Cambia el color del texto al pasar el mouse */
+}
+
+.nav-links a:hover::before {
+visibility: visible;
+width: 100%; /* Anima la línea subrayada al ancho completo del texto */
+}
+/*header*/
+header {
+margin-top:25px;
+padding: 20px; /* Espaciado alrededor del header */
+color:#f4f4f4;
+background-color: #333; /* Fondo oscuro para la barra de navegación */
+border-radius: 10px 10px 10px 10px;
+padding-bottom:100px;
+padding-top:50px;
+object-position: center;
+text-align: center;
+
+}
+.header__contenido {
+display: flex; /* Habilita Flexbox */
+align-items: flex-start; /* Alinea los elementos al inicio */
+gap: 20px; /* Espacio entre las columnas */
+padding: 20px; /* Espaciado interno opcional */
+}
+
+#perfil__contenedor {
+flex: 0 0 300px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+.texto__perfil {
+flex: 3;
+padding:50px;
+max-width:100%;
+text-align: justify;
+}
+#sobremi__contenido{
+padding:50px;
+}
+#perfil__contenedor {
+position: relative; /* Para posicionar los cubos dentro del contenedor */
+width: 100%; /* Ancho del contenedor de la imagen */
+height: 100%; /* Alto del contenedor de la imagen */
+overflow: hidden; /* Para ocultar los cubos que salgan del contenedor */
+}
+
+#perfil__contenedor img {
+width: 100%; /* Ajustar la imagen al 100% del contenedor */
+height: 100%; /* Ajustar la imagen al 100% del contenedor */
+border-radius: 50%; /* Hacer que la imagen sea circular */    
+object-fit: cover; /* Mantener la relación de aspecto */
+border: 2px solid #00ff00; /* Agregar un marco verde */
+box-sizing: border-box; /* Asegurarse de que el borde no afecte el tamaño */
+}
+
+
+.cube {
+position: absolute; /* Posicionamiento absoluto para los cubos */
+width: 30px; /* Ancho de cada cubo */
+height: 30px; /* Alto de cada cubo */
+background-color: #333; /* Color de los cubos */
+opacity: 0; /* Ocultar cubos inicialmente */
+border-radius: 5%; /* Bordes redondeados para los cubos */
+}
+h1 {
+font-size: 2em; /* Tamaño de fuente del encabezado */
+margin: 0; /* Eliminar margen por defecto */
+}
+
+.saludo {
+color: #3498db; /* Color para "Hola" */
+font-size:30px;
+}
+
+.nombre {
+color: #e74c3c; /* Color para "MAXIMILIANO FUENTEALBA M." */
+}
+
+.titulo {
+color: #2ecc71; /* Color para "Desarrollador" */
+}
+
+.subtitulo {
+color: #9b59b6; /* Color para "Front-End" */
+}
+
+.profesion {
+color: #f39c12; /* Color para "Animador Digital" */
+}
+
+#Redes__sociales {
+list-style: none; /* Eliminar los puntos de la lista */
+padding: 5px; /* Eliminar padding por defecto */
+margin: 5px 0 0; /* Espacio entre el texto y las redes sociales */
+text-align: center; /* Centrar los enlaces de redes sociales */
+padding-top:50px;
+}
+
+#Redes__sociales li {
+display: inline-block; /* Mostrar enlaces como bloques en línea */
+margin: 0 10px; /* Espacio entre los enlaces */
+}
+
+#Redes__sociales a {
+display: inline-block; /* Para que el padding se aplique correctamente */
+padding: 10px 20px; /* Espaciado interno */
+color: #00ff00;; /* Color del texto */
+font-weight:bold;
+text-decoration: none; /* Eliminar subrayado de los enlaces */
+border-radius: 25px; /* Esquinas redondeadas */
+border: 2px solid #00ff00;; /* Borde verde */
+transition: all 0.3s ease; /* Transición suave para efectos */
+position: relative; /* Necesario para el efecto de brillo */
+box-shadow: 0 0 5px rgba(76, 175, 80, 0.8); /* Brillo sutil */
+}
+
+#Redes__sociales a::before {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 100%;
+height: 100%;
+background: rgba(9, 231, 17, 0.5); /* Color de brillo */
+border-radius: 25px; /* Coincidir con el botón */
+z-index: -1; /* Detrás del texto */
+filter: blur(10px); /* Difuminar el brillo */
+transform: translate(-50%, -50%); /* Centrar el brillo */
+transition: all 0.3s ease; /* Transición suave para el brillo */
+}
+
+#Redes__sociales a:hover {
+color: #ffffff; /* Color del texto al pasar el mouse */
+font-weight:bold;
+box-shadow: 0 0 20px rgba(76, 175, 80, 1); /* Brillo fuerte al pasar el mouse */
+}
+
+#Redes__sociales a:hover::before {
+filter: blur(15px); /* Aumentar el difuminado al pasar el mouse */
+}
+
+
+section {
+display: flex; /* Usar Flexbox para el diseño */
+margin-top: 25px;
+justify-content: space-between; /* Espacio entre el texto y la imagen de perfil */
+align-items: flex-start; /* Alinear la parte superior del texto y la imagen */
+padding: 20px; /* Espaciado alrededor del header */
+color: #f4f4f4;
+background-color: #333; /* Fondo oscuro */
+border-radius: 10px 10px 10px 10px;
+}
+
+.skills-section {
+display: grid; /* Usar Grid para el layout */
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Múltiples columnas */
+gap: 40px; /* Separación entre los artículos */
+justify-items: center; /* Centrar los artículos */
+padding: 70px; /* Espaciado interno de la sección */
+}
+
+.skill-card {
+background-color: #fff; /* Fondo blanco para los artículos */
+border: 3px solid #4CAF50; /* Borde verde */
+border-radius: 10px; /* Bordes redondeados */
+box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); /* Brillo verde neón */
+transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+text-align: center; /* Centrar el texto dentro del artículo */
+overflow: hidden; /* Ocultar el contenido que sobresalga */
+}
+
+.skill-card:hover {
+box-shadow: 0 0 25px rgba(76, 175, 80, 1); /* Brillo más intenso al pasar el mouse */
+transform: scale(1.05); /* Aumentar el tamaño del artículo */
+}
+
+.skill-logo {
+display: flex; /* Usar Flexbox para centrar el logo */
+justify-content: center; /* Centrar horizontalmente */
+align-items: center; /* Centrar verticalmente */
+padding: 15px; /* Espaciado interno para el logo */
+}
+
+.skill-logo img {
+width: 50%; /* Hacer que el logo sea responsivo */
+height: auto; /* Mantener la relación de aspecto */
+transition: transform 0.3s; /* Transición suave para el logo */
+}
+
+.skill-card:hover .skill-logo img {
+transform: scale(1.1); /* Aumentar el tamaño del logo al pasar el mouse */
+}
+
+.skill-title {
+margin: 10px 0 0 0; /* Espaciado superior para el título */
+font-size: 1.2em; /* Tamaño de fuente del título */
+color: #333; /* Color del texto del título */
+}
+.formacion-section {
+display: grid; /* Usar Grid para el layout */
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Múltiples columnas */
+gap: 40px; /* Separación entre los artículos */
+padding: 70px; /* Espaciado interno de la sección */
+}
+
+.formacion-card {
+background-color: #fff; /* Fondo blanco para los artículos */
+border: 3px solid #4CAF50; /* Borde verde */
+border-radius: 10px; /* Bordes redondeados */
+box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); /* Brillo verde neón */
+transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+display: flex; /* Usar Flexbox para el contenido del artículo */
+align-items: center; /* Centrar verticalmente el contenido */
+overflow: hidden; /* Ocultar el contenido que sobresalga */
+}
+.formacion-card:hover .formacion-logo img {
+transform: scale(1.1); /* Aumentar el tamaño del logo al pasar el mouse */
+}
+.formacion-title {
+margin: 0 0 10px 0; /* Espaciado para el título */
+font-size: 1.5em; /* Tamaño de fuente del título */
+color: #333; /* Color del texto del título */
+}
+
+.formacion-description {
+color: #666; /* Color del texto de la descripción */
+}
+.formacion-details {
+padding: 15px; /* Espaciado interno para los detalles */
+}
+.formacion-logo {
+flex-shrink: 0; /* No permitir que el logo se reduzca */
+width: 100px; /* Ancho fijo para el logo */
+padding: 15px; /* Espaciado interno para el logo */
+}
+
+.formacion-logo img {
+width: 100%; /* Hacer que el logo sea responsivo */
+height: auto; /* Mantener la relación de aspecto */
+transition: transform 0.3s; /* Transición suave para el logo */
+}
+.cartel {
+display: inline-block;
+padding: 2px 5px;
+color: white;
+font-size: 10px;
+font-weight: bold;
+text-transform: uppercase;
+border-radius: 10px;
+box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+margin: 1px;
+}
+.html-cartel {
+background-color: #ce6006;
+}
+.php-cartel {
+background-color: #6b15ce;
+}
+.css-cartel {
+background-color: #4682B4;
+}
+.js-cartel {
+background-color: #FFD700;
+}
+.mysql-cartel {
+background-color: #00aeff;
+}
+.titulo__section {
+position: relative;
+font-size: 48px;
+color: white;
+text-transform: uppercase;
+letter-spacing: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding-top:25px;
+}
+
+.titulo__section::before,
+.titulo__section::after {
+content: "";
+position: absolute;
+width: 120px;
+height: 3px;
+background: #00ff00; /* Color neón verde */
+transition: width 0.5s ease;
+box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+}
+
+.titulo__section::before {
+left: -0px; /* Posición inicial de la línea izquierda */
+}
+
+.titulo__section::after {
+right: 0px; /* Posición inicial de la línea derecha */
+}
+
+.titulo__section:hover::before,
+.titulo__section:hover::after {
+width: 300px; /* Ancho de las líneas al hacer hover */
+}
+
+/* Estilo general para la sección de contacto */
+.section__contacto {
+display: flex; /* Usar Flexbox para el diseño */
+margin-top: 25px;
+justify-content: center; /* Centrar contenido en la sección */
+align-items: flex-start; /* Alinear la parte superior del texto y la imagen */
+padding: 20px; /* Espaciado alrededor del header */
+color: #f4f4f4;
+background-color: #333; /* Fondo oscuro */
+border-radius: 10px 10px 10px 10px;
+}
+
+/* Estilo para el artículo de contacto */
+.articulo__contacto {
+padding:30px;
+display: flex; /* Habilita Flexbox para el artículo */
+width: 100%; /* Ancho completo */
+max-width: 1200px; /* Máximo ancho del artículo */
+margin: 0 auto; /* Centra el artículo */
+}
+
+/* Estilo para el formulario de contacto */
+.Formulario__contacto {
+flex: 2; /* Toma el espacio restante */
+padding: 20px; /* Espaciado interno */
+background-color: #1a1a1a; /* Color de fondo del formulario */
+border-radius: 10px 50px 50px 10px; /* Bordes redondeados */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+margin-right: 20px; /* Margen a la derecha para separación */
+}
+
+/* Estilo para la información de contacto */
+.contacto__info {
+flex: 2; /* Toma el espacio restante */
+padding: 20px; /* Espaciado interno */
+padding-bottom:0px;
+background-color: #1a1a1a; /* Color de fondo de la info de contacto */
+border-radius: 50px 10px 10px 50px; /* Bordes redondeados: arriba izquierda, arriba derecha, abajo derecha, abajo izquierda */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+}
+
+/* Estilo para el botón de WhatsApp */
+.btn-whatsapp-pulse {
+background: #25d366;
+color: white;
+position: bottom;
+bottom: 20px;
+right: 30px;
+margin-top:-190px;
+margin-left:350px;
+font-size: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 0;
+height: 0;
+padding: 35px;
+text-decoration: none;
+border-radius: 50%;
+animation-name: pulse;
+animation-duration: 1.5s;
+animation-timing-function: ease-out;
+animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+0% {
+box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+}
+80% {
+box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+}
+}
+
+.btn-whatsapp-pulse-border {
+bottom: 120px;
+right: 20px;
+animation-play-state: paused;
+}
+
+.btn-whatsapp-pulse-border::before {
+content: "";
+position: absolute;
+border-radius: 50%;
+padding: 25px;
+border: 5px solid #25d366;
+opacity: 0.75;
+animation-name: pulse-border;
+animation-duration: 1.5s;
+animation-timing-function: ease-out;
+animation-iteration-count: infinite;
+}
+
+@keyframes pulse-border {
+0% {
+padding: 25px;
+opacity: 0.75;
+}
+75% {
+padding: 50px;
+opacity: 0;
+}
+100% {
+opacity: 0;
+}
+}
+
+
+footer {
+color: white; /* Color del texto */
+text-align: center; /* Centrar texto */
+padding: 5px; /* Espaciado interno */
+position: relative; /* Para que se posicione bien en la página */
+bottom: 0; /* Mantener en la parte inferior */
+width: 100%; /* Ancho completo */
+}
+
+.footer-content p {
+margin: 5px 0; /* Espaciado entre los párrafos */
+}
+
+#contactForm {
+max-width: 600px;
+margin: 0 auto;
+padding: 5px;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+width: 100%;
+padding: 5px;
+background-color: #242424;
+font-weight: bold;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+transition: border-color 0.3s, box-shadow 0.3s; /* Añadido para transición de sombra */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+border-color: #25D366;
+outline: none;
+box-shadow: 0 0 5px #25D366, 0 0 10px #25D366; /* Sombra de neón */
+}
+
+button {
+background-color: #5cb85c;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 10px 15px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s;
+width: 100%;
+}
+
+button:hover {
+background-color: #4cae4c;
+outline: none;
+box-shadow: 0 0 5px #25D366, 0 0 10px #25D366; /* Sombra de neón */
+}
+button:focus {
+border-color: #25D366;
+outline: none;
+box-shadow: 0 0 5px #25D366, 0 0 10px #25D366; /* Sombra de neón */
+}
+#contact__info {
+margin-top: 30px;
+padding: 10px;
+border-radius: 5px;
+font-weight: bold;
+display: none;
+}
+.success {
+background-color: #d4edda;
+color: #155724;
+}
+.error {
+background-color: #f8d7da;
+color: #721c24;
+}
+/* Estilos del botón */
+#btnSubir {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 50px;
+height: 50px;
+background-color: #25D366;
+color: #fff;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+font-size: 24px;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto de hover */
+#btnSubir:hover {
+background-color: #64df91;
+transform: scale(1.1);
+}
+
+
+/* media queries*/
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 468px) {
+nav {
+
+align-items: flex-start; /* Alinea los elementos al inicio */
+border-radius: 10px 10px 0px 0px;
+}
+
+.nav-links {
+flex-direction: column; /* Cambia a columna */
+gap: 10px; /* Reduce el espacio entre los enlaces */
+}
+
+.title {
+font-size: 1.2rem; /* Reduce el tamaño de la fuente del título */
+}
+
+h1 {
+font-size: 1.5em; /* Reduce el tamaño del encabezado */
+}
+.articulo__contacto {
+padding:0px;
+display: flex;
+flex-direction: column; /* Cambia la dirección a columna */
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+}
+.Formulario__contacto {
+flex: 2;
+margin-top:50px;
+padding: 20px;
+background-color: #1a1a1a;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+margin-right: 0px;
+}
+.contacto__info {
+flex: 2;
+padding-top:50px;
+padding: 20px;
+padding-bottom: 50px;
+background-color: #1a1a1a;
+border-radius: 10px 10px 10px 10px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-whatsapp-pulse {
+background: #25d366;
+color: white;
+position: bottom;
+bottom: 20px;
+right: 30px;
+margin-top: 10px;
+margin-left: 90px;
+font-size: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 0;
+height: 0;
+padding: 35px;
+text-decoration: none;
+border-radius: 50%;
+animation-name: pulse;
+animation-duration: 1.5s;
+animation-timing-function: ease-out;
+animation-iteration-count: infinite;
+}   
+.skills-section, .formacion-section {
+grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Menos columnas en grid */
+padding: 20px; /* Reduce el padding interno */
+}
+
+.skill-card, .formacion-card {
+margin: 10px; /* Espaciado entre las tarjetas */
+}
+
+#Redes__sociales a {
+padding: 5px 10px; /* Reduce el padding de los enlaces de redes */
+}
+
+.titulo__section {
+font-size: 36px; /* Reduce el tamaño del título de sección */
+}
+
+.titulo__section::before,
+.titulo__section::after {
+width: 80px; /* Ancho reducido para las líneas */
+}
+
+.btn-whatsapp-pulse {
+font-size: 30px; /* Tamaño del botón más pequeño */
+padding: 25px; /* Reduce el padding del botón */
+}
+
+.titulo__section::before,
+.titulo__section::after {
+display:none;
+}
+
+.cube {
+display:none;
+}
+.header__contenido {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+padding:0px;
+}
+.texto__perfil {
+flex: 3;
+padding: 10px;
+max-width: 100%;
+text-align: justify;
+}
+#perfil__contenedor img {
+width: 100%; /* Ajustar la imagen al 100% del contenedor */
+height: 100%; /* Ajustar la imagen al 100% del contenedor */
+border-radius: 50%; /* Hacer que la imagen sea circular */
+object-fit: cover; /* Mantener la relación de aspecto */
+}
+.nav-links {
+display: none; /* Oculta el menú en dispositivos móviles */
+flex-direction: column;
+position: absolute;
+top: 93px;
+margin-left:-5px;
+width:250px;
+background-color: #333;
+z-index: 1;
+padding: 20px 0;        
+border-radius: 0px 0px 20px 0px;
+}
+
+.nav-links a:hover::before {
+visibility: visible;
+width: 100%; /* Anima la línea subrayada al ancho completo del texto */
+}
+.nav-links.active {
+display: flex; /* Muestra el menú cuando se activa */
+}
+/* Línea de neón */
+.nav-links a::before {
+content: "";
+position: absolute;
+width: 0;
+height: 3px;
+bottom: 0;
+left: 0;
+background-color: #00ff00; /* Color neón verde */
+visibility: hidden;
+transition: all 0.4s ease-in-out;
+box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+.hamburger {
+display: block; /* Muestra el icono de hamburguesa en móviles */
+}
+} 
